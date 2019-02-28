@@ -1,0 +1,21 @@
+{
+  "name": "api-backend-scde",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ygorazambuja/api-backend-scde.git",
+  "author": "Ygor Correa Azambuja <ygorazambuja@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "edit-json-file": "^1.2.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13",
+    "short-id": "^0.1.0-1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  }
+}
