@@ -2,6 +2,10 @@ const help = require('../database/help.json')
 
 module.exports = {
   show (req, res) {
-    return res.json(help)
+    try {
+      return res.json(help)
+    } catch (err) {
+      console.log(err)
+    }
   }
 }

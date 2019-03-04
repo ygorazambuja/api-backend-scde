@@ -3,7 +3,8 @@
         "get": {
             "alunos": "Get all Alunos from database",
             "recados": "Get all recados from database",
-            "help": "display this message"
+            "help": "display this message",
+            "aluno": "Get Aluno by id  /alunos/:id"
         },
         "post": {
             "recado": "Post a Recado on database (author: String, content: String)",
