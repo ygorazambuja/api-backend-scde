@@ -1,0 +1,14 @@
+{
+    "methods": {
+        "get": {
+            "alunos": "Get all Alunos from database",
+            "recados": "Get all recados from database",
+            "help": "display this message"
+        },
+        "post": {
+            "recado": "Post a Recado on database (author: String, content: String)",
+            "aluno": "Post a Aluno on database (nome: String, serie: String, ano: Number)",
+            "bulk": "Post a Collection of alunos"
+        }
+    }
+}
