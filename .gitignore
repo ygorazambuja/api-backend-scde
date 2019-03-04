@@ -1,2 +1,4 @@
 .env
 node_modules
+src/__test__
+jest.config.js

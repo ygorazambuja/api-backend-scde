@@ -14,5 +14,13 @@ module.exports = {
       const recado = await Recado.create(req.body)
       return res.json(recado)
     } catch (err) {}
+  },
+  async getById (req, res) {
+    try {
+      const recado = await Recado.findById(req.params.id)
+      return res.json(recado)
+    } catch (err) {
+      console.log(err)
+    }
   }
 }

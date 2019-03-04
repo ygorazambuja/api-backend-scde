@@ -11,6 +11,7 @@ routes.post('/recado', RecadoController.store)
 
 routes.get('/alunos', AlunoController.index)
 routes.get('/aluno/:id', AlunoController.getById)
+routes.get('/recado/:id', RecadoController.getById)
 routes.get('/recados', RecadoController.index)
 routes.get('/help', HelpController.show)
 
