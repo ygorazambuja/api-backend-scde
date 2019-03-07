@@ -3,7 +3,7 @@ const Recado = require('../models/Recado')
 module.exports = {
   async index (req, res) {
     try {
-      const recados = await Recado.find({}).sort('-createdAt')
+      const recados = await Recado.find({}).sort('-createAt')
       return res.json(recados)
     } catch (err) {
       console.log(err)
@@ -12,6 +12,9 @@ module.exports = {
   async store (req, res) {
     try {
       const recado = await Recado.create(req.body)
+
+      req.io.emit('recado', recado)
+
       return res.json(recado)
     } catch (err) {}
   },
