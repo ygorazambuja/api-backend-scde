@@ -5,9 +5,7 @@ module.exports = {
     try {
       const recados = await Recado.find({}).sort('-createAt')
       return res.json(recados)
-    } catch (err) {
-      console.log(err)
-    }
+    } catch (err) {}
   },
   async store (req, res) {
     try {
@@ -22,8 +20,6 @@ module.exports = {
     try {
       const recado = await Recado.findById(req.params.id)
       return res.json(recado)
-    } catch (err) {
-      console.log(err)
-    }
+    } catch (err) {}
   }
 }

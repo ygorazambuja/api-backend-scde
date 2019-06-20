@@ -12,9 +12,7 @@ module.exports = {
     try {
       const users = await User.find({}).sort('-createAt')
       return res.json(users)
-    } catch (err) {
-      console.log(err)
-    }
+    } catch (err) {}
   },
   async store (req, res) {
     const { username, email, password, confirmPassword } = req.body
@@ -50,12 +48,10 @@ module.exports = {
     const { username, password } = request.body
     try {
       const user = await User.findOne({ username }).select('+password')
-      console.log(user)
       if (!user) {
         return response.status(400).send({ error: 'User not Found' })
       }
       if (!(user.password === password)) {
-        console.log(user.password + ' ' + password)
         return response.status(400).send({ error: 'Passwords dont match' })
       }
       user.password = undefined

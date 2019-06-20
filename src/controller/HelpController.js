@@ -4,8 +4,6 @@ module.exports = {
   show (req, res) {
     try {
       return res.json(help)
-    } catch (err) {
-      console.log(err)
-    }
+    } catch (err) {}
   }
 }
