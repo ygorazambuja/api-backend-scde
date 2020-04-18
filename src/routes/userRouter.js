@@ -9,6 +9,5 @@ routes.get("/user/:id", UserController.getById);
 routes.post("/user", UserController.store);
 routes.get("/user", UserController.index);
 routes.delete("/user/:id", UserController.deleteUserById);
-routes.post("/authenticateUser", UserController.authenticateUser);
 
 module.exports = routes;
