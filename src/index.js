@@ -27,6 +27,8 @@ app.use(function (req, res, next) {
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
 });
 
 app.use(express.json());
