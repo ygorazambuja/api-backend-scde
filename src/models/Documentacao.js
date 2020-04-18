@@ -7,7 +7,7 @@ const DocumentacaoSchema = new mongoose.Schema(
         comprovanteEndereco: { type: Boolean, default: false },
         carteiraVacina: { type: Boolean, default: false },
         declaracaoTransferencia: { type: Boolean, default: false },
-        transferencia: { type: Boolean, default: false }
+        transferencia: { type: Boolean, default: false },
     },
     { timestamps: true }
 );

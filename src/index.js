@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     return next();
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
         "Access-Control-Allow-Headers",
@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 });
 
 mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
 });
 
 app.use(express.json());
