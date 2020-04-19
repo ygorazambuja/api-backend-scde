@@ -26,4 +26,15 @@ module.exports = {
             return res.json(aluno);
         } catch (err) {}
     },
+    async searchByName(req, res) {
+        const text = req.query.q;
+
+        console.log(text);
+        try {
+            const users = await Aluno.find({ $text: { $search: text } });
+            return res.status(200).send(users);
+        } catch (error) {
+            return res.send(error);
+        }
+    },
 };

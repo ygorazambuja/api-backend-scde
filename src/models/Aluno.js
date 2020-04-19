@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const AlunoSchema = new mongoose.Schema(
     {
-        nome: String,
+        nome: { type: [String], text: true },
         serie: String,
         ano: Number,
     },

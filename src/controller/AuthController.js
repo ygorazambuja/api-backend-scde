@@ -24,4 +24,34 @@ module.exports = {
             response.send({ user, token: generateToken({ id: user.id }) });
         } catch (err) {}
     },
+
+    async store(req, res) {
+        const { username, email, password, confirmPassword } = req.body;
+
+        try {
+            if (!confirmPassword)
+                return res
+                    .status(401)
+                    .send({ Error: "Sem senha de confirmação" });
+
+            if (!email)
+                return res.status(401).send({ Error: "Sem email Valido" });
+            if (!(password === confirmPassword))
+                return res.status(401).send({ Error: "Senhas Não Coincidem" });
+
+            let user = await User.findOne({ username });
+            if (user)
+                return res.status(401).send({ Error: "Usuario ja Existe" });
+
+            user = undefined;
+            user = await User.findOne({ email });
+            if (user) return res.status(401).send({ Error: "Email ja existe" });
+
+            const usuario = await User.create({ username, email, password });
+            usuario.password = undefined;
+            return res.status(200).send(usuario);
+        } catch (error) {
+            return res.status(500).send({ error: "Algum pau loco" });
+        }
+    },
 };
