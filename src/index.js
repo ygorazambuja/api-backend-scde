@@ -7,7 +7,7 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
-app.use((req, res, next) => {
+app.use((req, _, next) => {
     req.io = io;
     return next();
 });

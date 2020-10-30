@@ -1,7 +1,7 @@
 const Aluno = require("../models/Aluno");
 
 module.exports = {
-    async index(req, res) {
+    async index(_, res) {
         try {
             const alunos = await Aluno.find({}).sort("-ano");
             return res.json(alunos);
@@ -16,7 +16,7 @@ module.exports = {
     async bulkStore(req, res) {
         try {
             const alunos = req.body;
-            await Aluno.collection.insert(alunos);
+            await Aluno.collection.insertMany(alunos);
             return res.json(alunos);
         } catch (err) {}
     },
